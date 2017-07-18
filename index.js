@@ -3,10 +3,10 @@ const app = express()
 
 app.get('/members/:memberid', function (req, res) {
     var memberid = req.params.memberid;
-    res.setHeader('Content-Type', 'application/json')
     //res.send(memberid);
     //res.send('./data/'+ memberid + '.json');
     var member = require('./data/'+ memberid + '.json')
+    res.setHeader('Content-Type', 'application/json')
     res.send(member)
 })
 
